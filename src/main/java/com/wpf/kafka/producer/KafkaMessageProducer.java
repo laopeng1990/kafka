@@ -21,6 +21,7 @@ public class KafkaMessageProducer {
 
     private KafkaProducer<String, String> producer;
 
+    @SuppressWarnings("unchecked")
     public KafkaMessageProducer(Properties properties) {
         producer = new KafkaProducer<>(new HashMap<String, Object>((Map)properties),
                 new StringSerializer(), new StringSerializer());
